@@ -1,9 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
-import re
-forums ={"mathoverflow": "https://mathoverflow.net", "stackexchange" : "https://math.stackexchange.com"}
-questions = dict()
-def initiate_scrape(search_query):
+
+def initiate_scrape(search_query, forums):
+    forums=forums
+    questions = dict() #will contain information about question and question itself
     session=requests.Session()
     headers = {"User-Agent": "Mozilla/5.0 (X11, Linux x86_64)" "AppleWebkit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.28 Safari/537.36", "Accept": "text/html, application/xhtml+xml,application/xml;" "q=0.9,image/webp,*/*;q=0.8"} #imitate browser
     for forum_name, url_stem in forums.items(): #iterate through forums to get their name and url
@@ -17,8 +17,4 @@ def initiate_scrape(search_query):
             tag = result.find("a", class_="s-link") #tag that contains link to actual question
             link = tag["href"]
             questions[index]= {"title": title, "excerpt": excerpt, "link": url_stem+link, "forum": forum_name}
-
-
-
-initiate_scrape("conjugate")
-print(questions)
+    return questions

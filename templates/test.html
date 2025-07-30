@@ -7,6 +7,14 @@
 		<input type="text" name="question" required>
 		<button type="submit">Submit</button>
 	</form>
-	<h2> {{ result }} </h2>
+	<ul>
+        {% for key, item in result.items() %}
+            <li>
+                <strong>{{ item.title }}</strong><br>
+                Excerpt: {{ item.excerpt }}<br>
+                Link: {{ item.link }}
+            </li>
+        {% endfor %}
+	</ul>
   </body>
 </html>
