@@ -7,9 +7,12 @@ def index():
         question=request.form["question"]
         forums = {"mathoverflow": "https://mathoverflow.net", "stackexchange" : "https://math.stackexchange.com"}
         questions = scrape.initiate_scrape(question, forums)
-        return render_template("test.html", result=questions)
-    return render_template("test.html", result=dict())
+        return render_template("answers.html", result=questions, query=question)
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+# line 3 and 9 testing->scrape
