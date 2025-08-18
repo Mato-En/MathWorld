@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MathWorld</title>
     <link rel="stylesheet" href="static/styles.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  </head>
+
     <script>
         MathJax = {
           tex: {
@@ -19,12 +21,12 @@
         <div class="container-row">
             <form method="POST">
                 <input class="question-bar" type="text" name="question" value="{{ query }}" required> <!--set value to question entered -->
-                <button class="question-bar" type="submit">O</button>
+                <button class="" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
         <div class="answers">
             {% for key, item in result.items() %}
-                <a class="margin-lr" href="{{ item.link }}">{{ item.title }}</a>
+                <a class="margin-lr question-link" href="{{ item.link }}">{{ item.title }}</a>
                 <p class="margin-lr">
                 {{ item.excerpt }}
                 </p>

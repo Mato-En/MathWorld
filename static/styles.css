@@ -1,9 +1,9 @@
 .container-column {
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-top: 20vh;
 }
 
 .container-row {
@@ -13,20 +13,28 @@
 }
 
 .question-bar {
-    border: 0px;
-    background-color: lightblue;
+    border: solid #00006c;
+    background-color: white;
     border-radius: 15px;
     height: 2em;
+
 }
 
 button {
     position: relative;
-    right: 2em;
+    right: 3em;
+    background: white;
+    border: none;
+
+
 }
 
 input {
     width: 30em;
     padding-left: 1em;
+}
+input:focus {
+  outline: none;
 }
 
 .logo {
@@ -45,6 +53,17 @@ input {
     margin: 1vw 3vw;
 }
 
-a {
+.fa-magnifying-glass {
+    color: #fe6f00;
+}
 
+.domain-title {
+    color: #00006c;
+    margin-top:0px;
+}
+
+.question-link {
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #00006c;
 }
